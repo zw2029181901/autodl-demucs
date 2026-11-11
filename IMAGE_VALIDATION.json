@@ -1,0 +1,59 @@
+{
+  "prior_standalone_http": {
+    "id": "09-demucs-stems",
+    "name": "Demucs 音轨分离",
+    "status": "passed",
+    "outputs": [
+      "/tmp/gradio/8819019a5d12303c073fc32fb38ffb8c4de08cdd25e97dec98dc83177b54bdea/vocals.wav",
+      "/tmp/gradio/20ab1bb5c6b013a2086fb4227f738c9a910cee7444822ae2c5b1ea75e484f130/20261111-181112-903c0704d061.zip"
+    ],
+    "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+    "input_note": "Four-second synthesized mixture; verifies inference and stem export, not music quality",
+    "elapsed_seconds": 8.483,
+    "slug": "autodl-demucs",
+    "standalone_directory_bytes": 665563258,
+    "model_revisions": {
+      "main": "b57e3704651588e6702539cd7e8f87f6"
+    },
+    "platform_image_saved": false,
+    "published": false
+  },
+  "system_disk_migration": {
+    "verified_at": "2026-11-11T23:40:07.428647+08:00",
+    "slug": "autodl-demucs",
+    "status": "passed",
+    "system_disk_app": "/root/autodl-active",
+    "verification": "Copied model file sizes, contained paths, portable symlinks, pip check, offline model validation and existing HTTP6006 title",
+    "pip_check": "No broken requirements found.",
+    "doctor_output": "Project: 09-demucs-stems\nIMPORT OK gradio 5.49.1\nIMPORT OK torch 2.8.0+cu128\nIMPORT OK torchaudio 2.8.0+cu128\nIMPORT OK demucs 4.0.1\nIMPORT OK soundfile 0.13.1\nTORCH 2.8.0+cu128; CUDA runtime 12.8\nGPU unavailable; CPU mode supported\nMODEL OK main: /root/autodl-active/models/09-demucs-stems/955717e8-8726e21a.th\nHTTP OK: 6 UI components\nThis check does not prove model generation works. Complete the sample in SMOKE_TEST.md.\n",
+    "copied_model_files": [
+      {
+        "path": "models/09-demucs-stems/955717e8-8726e21a.th",
+        "bytes": 84141911
+      },
+      {
+        "path": "models/09-demucs-stems/htdemucs.yaml",
+        "bytes": 21
+      }
+    ],
+    "lib64_symlink_preserved": true,
+    "disk_usage": "614367232\t/root/autodl-active",
+    "prior_standalone_http_inference": "passed; not repeated",
+    "new_model_inference_performed": false,
+    "compute_mode": "no GPU; migration checks only",
+    "autostart": "Same launcher verified on U2Net restored image; no additional per-app reboot test",
+    "platform_image_saved": false,
+    "restored_image_verified": false,
+    "published": false
+  },
+  "platform_image_saved": true,
+  "restored_image_verified": false,
+  "published": false,
+  "image_uuid": "image-80c91b9d2e",
+  "image_name": "autodl-demucs-20261111",
+  "image_size_gb": 1.29,
+  "review_submitted": true,
+  "review_status": "pending",
+  "review_checked_at": "2026-11-12T00:26:49.1863829+08:00",
+  "community_url": "https://www.autodl.art/i/zw2029181901/autodl-demucs/Demucs-Stems"
+}
