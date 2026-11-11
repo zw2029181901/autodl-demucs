@@ -1,5 +1,41 @@
 [
   {
+    "archive": "autodl-sdxl.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
+    "archive": "autodl-whisper.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
+    "archive": "autodl-kokoro.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
+    "archive": "autodl-u2net.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
+    "archive": "autodl-realesrgan.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
+    "archive": "autodl-sam2.zip",
+    "standalone_ui": "PASS",
+    "linux_script_newlines": "PASS",
+    "weights_included": false
+  },
+  {
     "archive": "autodl-blip.zip",
     "standalone_ui": "PASS",
     "linux_script_newlines": "PASS",
@@ -18,43 +54,7 @@
     "weights_included": false
   },
   {
-    "archive": "autodl-kokoro.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-realesrgan.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-sam2.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-sdxl.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-u2net.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-wan21.zip",
-    "standalone_ui": "PASS",
-    "linux_script_newlines": "PASS",
-    "weights_included": false
-  },
-  {
-    "archive": "autodl-whisper.zip",
+    "archive": "autodl-depth-anything-v2.zip",
     "standalone_ui": "PASS",
     "linux_script_newlines": "PASS",
     "weights_included": false

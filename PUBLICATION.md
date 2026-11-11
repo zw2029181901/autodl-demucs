@@ -9,7 +9,7 @@
 | AutoDL.Art账号 | 200211（金鳞） |
 | 介绍 | 将音乐分成人声、鼓、贝斯和其他伴奏，试听人声并下载四轨ZIP。 |
 | 服务端口 | 6006 |
-| 启动命令 | bash /root/autodl-demucs/start.sh |
+| 本批导出镜像启动命令 | bash /root/autodl-active/run-service.sh |
 | 模型容量 | 约0.084GB；模型及输出预留3GB，依赖另计 |
 | 上游 | https://github.com/facebookresearch/demucs |
 | 许可 | MIT |

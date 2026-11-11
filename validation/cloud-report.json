@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-11T18:15:50",
+  "checked_at": "2026-11-11T18:27:48",
   "hardware": "RTX 3090 24GB; Ubuntu 22.04; Python 3.12.3; base torch 2.8.0+cu128",
   "validation": "Ten real pretrained tasks through Gradio HTTP in ten exported standalone environments; bundled model files; offline inference",
-  "total_standalone_directory_bytes": 17128082935,
+  "total_standalone_directory_bytes": 17129175718,
   "size_caveat": "Directory sizes are not platform saved-image sizes. Platform total quota must be checked after each save.",
   "autostart": "Based on observed current base boot reading /etc/profile as PID1; real platform reboot and restored-image verification pending",
   "applications": [
@@ -98,8 +98,23 @@
       "sample_rate": 24000,
       "duration_seconds": 4.225,
       "elapsed_seconds": 14.171,
+      "supplementary_checks": [
+        {
+          "id": "04-kokoro-tts",
+          "name": "Kokoro 配音",
+          "status": "passed",
+          "outputs": [
+            "/tmp/gradio/65960f58946c722998c97d6f171d063ff61c54173f3df992e489d09a6c176ba0/20261111-182709-26f0abb2ea5d.wav"
+          ],
+          "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+          "sample_rate": 24000,
+          "duration_seconds": 3.6,
+          "language": "en",
+          "elapsed_seconds": 9.448
+        }
+      ],
       "slug": "autodl-kokoro",
-      "standalone_directory_bytes": 1267282932,
+      "standalone_directory_bytes": 1268375715,
       "model_revisions": {
         "main": "f3ff3571791e39611d31c381e3a41a3af07b4987"
       },
