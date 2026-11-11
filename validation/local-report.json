@@ -1,0 +1,109 @@
+{
+  "validation": "Local Windows UI/HTTP only; no cloud GPU inference",
+  "date": "2026-11-10",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "tests": "8 passed",
+  "applications": [
+    {
+      "id": "01-sdxl-studio",
+      "name": "SDXL 生图",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "generate"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "02-wan-video",
+      "name": "Wan2.1 文生视频",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "generate"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "03-whisper-subtitles",
+      "name": "Whisper 字幕",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "transcribe"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "04-kokoro-tts",
+      "name": "Kokoro 配音",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "synthesize"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "05-u2net-cutout",
+      "name": "U2Net 抠图",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "remove_background"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "06-realesrgan-upscale",
+      "name": "Real-ESRGAN 超分",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "upscale"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "07-sam2-segment",
+      "name": "SAM2.1 分割",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "select_point",
+        "segment"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "08-blip-caption",
+      "name": "BLIP 看图描述",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "caption"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "09-demucs-stems",
+      "name": "Demucs 音轨分离",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "separate"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "10-e5-document-search",
+      "name": "E5 文档检索",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "search"
+      ],
+      "inference": "NOT_RUN"
+    }
+  ]
+}

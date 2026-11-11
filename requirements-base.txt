@@ -1,0 +1,6 @@
+gradio==5.49.1
+numpy==1.26.4
+Pillow==11.3.0
+huggingface-hub==0.35.3
+safetensors==0.6.2
+setuptools==80.9.0

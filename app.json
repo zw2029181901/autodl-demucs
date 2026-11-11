@@ -1,0 +1,36 @@
+{
+  "id": "09-demucs-stems",
+  "slug": "autodl-demucs",
+  "name": "Demucs 音轨分离",
+  "description": "将音乐分成人声、鼓、贝斯和其他伴奏，试听人声并下载四轨ZIP。",
+  "task": "music-source-separation",
+  "requires_gpu": false,
+  "ffmpeg": true,
+  "imports": [
+    "torch",
+    "torchaudio",
+    "demucs",
+    "soundfile"
+  ],
+  "model_gb": 0.084,
+  "disk_gb": 3,
+  "gpu": "支持CPU或GPU，推荐GPU；每次最多5分钟，7秒分块。建议8GB内存起测。",
+  "license": "MIT",
+  "source": "https://github.com/facebookresearch/demucs",
+  "models": {
+    "main": {
+      "kind": "asset",
+      "filename": "955717e8-8726e21a.th",
+      "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th",
+      "bytes": 84141911,
+      "sha256_prefix": "8726e21a",
+      "md5": "b57e3704651588e6702539cd7e8f87f6"
+    }
+  },
+  "torch": true,
+  "account": {
+    "github": "zw2029181901",
+    "autodl_user": "200211"
+  }
+}
+
