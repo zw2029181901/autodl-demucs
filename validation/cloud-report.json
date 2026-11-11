@@ -1,0 +1,213 @@
+{
+  "checked_at": "2026-11-11T18:15:50",
+  "hardware": "RTX 3090 24GB; Ubuntu 22.04; Python 3.12.3; base torch 2.8.0+cu128",
+  "validation": "Ten real pretrained tasks through Gradio HTTP in ten exported standalone environments; bundled model files; offline inference",
+  "total_standalone_directory_bytes": 17128082935,
+  "size_caveat": "Directory sizes are not platform saved-image sizes. Platform total quota must be checked after each save.",
+  "autostart": "Based on observed current base boot reading /etc/profile as PID1; real platform reboot and restored-image verification pending",
+  "applications": [
+    {
+      "id": "08-blip-caption",
+      "name": "BLIP 看图描述",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/9b265a8dd5f11adcffe25d783978be11e98f5e2575bb6de19dcce1e7b67a7b80/20261111-181059-644df2325a81.txt"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "text": "a man in an orange space suit holding a helmet",
+      "elapsed_seconds": 9.75,
+      "slug": "autodl-blip",
+      "standalone_directory_bytes": 1617429777,
+      "model_revisions": {
+        "main": "82a37760796d32b1411fe092ab5d4e227313294b"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "09-demucs-stems",
+      "name": "Demucs 音轨分离",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/8819019a5d12303c073fc32fb38ffb8c4de08cdd25e97dec98dc83177b54bdea/vocals.wav",
+        "/tmp/gradio/20ab1bb5c6b013a2086fb4227f738c9a910cee7444822ae2c5b1ea75e484f130/20261111-181112-903c0704d061.zip"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "input_note": "Four-second synthesized mixture; verifies inference and stem export, not music quality",
+      "elapsed_seconds": 8.483,
+      "slug": "autodl-demucs",
+      "standalone_directory_bytes": 665563258,
+      "model_revisions": {
+        "main": "b57e3704651588e6702539cd7e8f87f6"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "11-depth-anything",
+      "name": "Depth Anything V2 深度估计",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/3513d4fe103564bcc39c28f5b4870d46fae370db99f06995f36bc712a0a87a01/20261111-181127-71ea45a38ffb.png"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "output_range": [
+        0,
+        65535
+      ],
+      "elapsed_seconds": 8.741,
+      "slug": "autodl-depth-anything-v2",
+      "standalone_directory_bytes": 726710086,
+      "model_revisions": {
+        "main": "5426e4f0f36572d16453bbda7a8389317b1bef99"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "10-e5-document-search",
+      "name": "E5 文档检索",
+      "status": "passed",
+      "outputs": [
+        "/root/autodl-tmp/cloud-evidence/e5-search-results.json"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "top_result": [
+        "refund.txt",
+        1,
+        0.9142,
+        "退款规则：购买后七天内可以申请退款。审核后款项会在三到五个工作日到账。"
+      ],
+      "elapsed_seconds": 7.767,
+      "slug": "autodl-e5",
+      "standalone_directory_bytes": 1148815353,
+      "model_revisions": {
+        "main": "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "04-kokoro-tts",
+      "name": "Kokoro 配音",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/edd284ffe16648f1ff202b0ed79ae814f844ed8cfc9617daa5bd2f54bd4baa24/20261111-181204-6259c0116045.wav"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "sample_rate": 24000,
+      "duration_seconds": 4.225,
+      "elapsed_seconds": 14.171,
+      "slug": "autodl-kokoro",
+      "standalone_directory_bytes": 1267282932,
+      "model_revisions": {
+        "main": "f3ff3571791e39611d31c381e3a41a3af07b4987"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "06-realesrgan-upscale",
+      "name": "Real-ESRGAN 超分",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/4f86fd2ab5c79e477cea41714ab8942c02b406ebabb358871cf96f98a9a81e14/20261111-181213-3aade6572301.png"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "output_size": [
+        512,
+        512
+      ],
+      "elapsed_seconds": 3.698,
+      "slug": "autodl-realesrgan",
+      "standalone_directory_bytes": 602921704,
+      "model_revisions": {
+        "main": "size and strict architecture checked"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "07-sam2-segment",
+      "name": "SAM2.1 分割",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/4d5a715d5f8a6ee48e8ca87bd8986c7455a0df6509d7e8fa1ca8f045031e4403/20261111-181229-8cc5ed23cd87.png",
+        "/tmp/gradio/086e5eb58a45db2388751d6f7f6b77c53aabea10e24f55e8c09dd80210dabd72/20261111-181229-6e7f5395f483.png"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "selected_point": [
+        230,
+        170
+      ],
+      "elapsed_seconds": 9.437,
+      "slug": "autodl-sam2",
+      "standalone_directory_bytes": 812727344,
+      "model_revisions": {
+        "main": "ee5bba1d82bb8749febdf90f45e84b687142ba03"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "01-sdxl-studio",
+      "name": "SDXL 生图",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/997293150af44783a008e9732a824f50fd954ff363841a6655c0b21bda0c9c98/20261111-181256-d996f5c4a79a.png"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "output_size": [
+        1024,
+        1024
+      ],
+      "steps": 20,
+      "seed": 42,
+      "elapsed_seconds": 22.054,
+      "slug": "autodl-sdxl",
+      "standalone_directory_bytes": 7595030305,
+      "model_revisions": {
+        "main": "462165984030d82259a11f4367a4eed129e94a7b"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "05-u2net-cutout",
+      "name": "U2Net 抠图",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/c0b4410924be063f4589aad0684aca1a80670bb188e296b802dbec12a23b0554/20261111-181337-d5f7b5db4de8.png"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "elapsed_seconds": 35.987,
+      "slug": "autodl-u2net",
+      "standalone_directory_bytes": 1360372020,
+      "model_revisions": {
+        "main": "60024c5c889badc19c04ad937298a77b"
+      },
+      "platform_image_saved": false,
+      "published": false
+    },
+    {
+      "id": "03-whisper-subtitles",
+      "name": "Whisper 字幕",
+      "status": "passed",
+      "outputs": [
+        "/tmp/gradio/1689ff625843975df14688417594729f5d8f55d49a52f8528365ed76ac3ca53f/20261111-181349-12d0c330f71a.txt",
+        "/tmp/gradio/be57ff07b3d1c225123be0264cee3b40ab354f4412390127396d289be9c18731/20261111-181349-076db39b9705.srt"
+      ],
+      "verification": "Standalone exported environment; Gradio HTTP upload, queue, inference and download",
+      "text": "Hello, welcome to our speech transcription demonstration.",
+      "input": "/root/autodl-tmp/cloud-evidence/spoken-english.wav",
+      "elapsed_seconds": 5.271,
+      "slug": "autodl-whisper",
+      "standalone_directory_bytes": 1331230156,
+      "model_revisions": {
+        "main": "536b0662742c02347bc0e980a01041f333bce120"
+      },
+      "platform_image_saved": false,
+      "published": false
+    }
+  ]
+}

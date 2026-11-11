@@ -43,7 +43,7 @@ TORCH_INDEX_URL=https://download.pytorch.org/whl/cu128 bash install.sh
 
 修改现有CPU环境时，先检查 `.venv/bin/python -c "import torch; print(torch.__version__, torch.version.cuda)"`。pip可能把同版本CPU包认作已满足；必要时用该索引显式安装 `torch==2.8.0+cu128 torchvision==0.23.0+cu128 torchaudio==2.8.0+cu128`，再重新执行依赖和任务验收。扩展CUDA环境会增加体积。
 
-若基础镜像本身精确提供torch2.8.0、torchvision0.23.0、torchaudio2.8.0，可在首次安装时 `USE_BASE_TORCH=1 bash install.sh` 复用基础环境。脚本会验证版本；其它版本不盲目复用。该选项可能继承基础环境的依赖，仍须通过pip check和真实任务。平台是否对多份镜像去重收费没有官方保证。
+若基础镜像本身精确提供torch2.8.0、torchvision0.23.0，可在首次安装时 `USE_BASE_TORCH=1 bash install.sh` 复用基础环境。Demucs还需torchaudio2.8.0。脚本会验证版本；其它版本不盲目复用。该选项可能继承基础环境的依赖，仍须通过pip check和真实任务。平台是否对多份镜像去重收费没有官方保证。
 
 ## 3. 后台启动与开机检查
 
@@ -60,7 +60,7 @@ nohup bash start.sh > app.log 2>&1 < /dev/null &
 
 ## 4. 保存镜像，并守住30GB总额
 
-1. 确认代码/venv在 `/root/项目名`，模型缓存放数据盘或用已核实公共目录。不要把大模型复制到系统盘。
+1. 确认代码/venv在 `/root/项目名`，模型缓存放数据盘或用已核实公共目录。数据盘不进镜像；小模型可按MODEL_STORAGE.md打包在项目models目录，并计入额度。不要把大模型复制到系统盘。
 2. 保存真实任务验收结果和 `installed-requirements.txt`，清理自己本次测试的个人输入输出；保留许可文件。不要把个人登录令牌、SSH私钥、密码写进发布内容。
 3. 关机，然后实例“更多 → 保存镜像”。按项目名填写，比如 `autodl-u2net`。
 4. “我的镜像”显示就绪后，记录该镜像大小以及所有镜像合计。你截图已有3.83GB；新镜像合计预算约26.17GB，建议再留至少1GB余量。接近总30GB就停止新增，调整依赖或合并环境；不自动扩容。

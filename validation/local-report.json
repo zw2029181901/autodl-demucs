@@ -1,22 +1,12 @@
 {
-  "validation": "Local Windows UI/HTTP only; no cloud GPU inference",
-  "date": "2026-11-10",
+  "validation": "Local Windows UI/HTTP only; cloud inference recorded separately",
+  "date": "2026-11-11",
   "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
-  "tests": "8 passed",
+  "tests": "9 passed",
   "applications": [
     {
       "id": "01-sdxl-studio",
       "name": "SDXL 生图",
-      "ui": "PASS",
-      "http": "PASS",
-      "api_names": [
-        "generate"
-      ],
-      "inference": "NOT_RUN"
-    },
-    {
-      "id": "02-wan-video",
-      "name": "Wan2.1 文生视频",
       "ui": "PASS",
       "http": "PASS",
       "api_names": [
@@ -102,6 +92,16 @@
       "http": "PASS",
       "api_names": [
         "search"
+      ],
+      "inference": "NOT_RUN"
+    },
+    {
+      "id": "11-depth-anything",
+      "name": "Depth Anything V2 深度估计",
+      "ui": "PASS",
+      "http": "PASS",
+      "api_names": [
+        "estimate"
       ],
       "inference": "NOT_RUN"
     }

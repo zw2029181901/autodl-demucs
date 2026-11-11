@@ -21,7 +21,7 @@ if [[ "${SKIP_APT:-0}" != 1 ]]; then
 fi
 if [[ ! -x "$app_dir/.venv/bin/python" ]]; then
     if [[ "${USE_BASE_TORCH:-0}" == 1 ]]; then
-        "$python_bin" -c 'import torch,torchvision,torchaudio; assert torch.__version__.split("+")[0]=="2.8.0" and torchvision.__version__.split("+")[0]=="0.23.0" and torchaudio.__version__.split("+")[0]=="2.8.0", "Base must have the exact supported torch/vision/audio versions"'
+        "$python_bin" -c 'import importlib,json,sys; cfg=json.load(open(sys.argv[1])); versions={"torch":"2.8.0","torchvision":"0.23.0"}; versions.update({"torchaudio":"2.8.0"} if "torchaudio" in cfg.get("imports",[]) else {}); assert all(importlib.import_module(name).__version__.split("+")[0]==version for name,version in versions.items()), "Base torch packages must match supported versions"' "$app_dir/app.json"
         "$python_bin" -m venv --system-site-packages "$app_dir/.venv"
     else
         "$python_bin" -m venv "$app_dir/.venv"
@@ -32,7 +32,11 @@ venv_python="$app_dir/.venv/bin/python"
 if [[ "$("$python_bin" -c 'import json,sys; print(json.load(open(sys.argv[1])).get("torch",True))' "$app_dir/app.json")" == True ]]; then
     if [[ "${USE_BASE_TORCH:-0}" != 1 ]]; then
         torch_flavor="$("$python_bin" -c 'import json,sys; print("cu128" if json.load(open(sys.argv[1]))["requires_gpu"] else "cpu")' "$app_dir/app.json")"
-        "$venv_python" -m pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url "${TORCH_INDEX_URL:-https://download.pytorch.org/whl/$torch_flavor}"
+        torch_packages=(torch==2.8.0 torchvision==0.23.0)
+        if [[ "$("$python_bin" -c 'import json,sys; print("torchaudio" in json.load(open(sys.argv[1])).get("imports",[]))' "$app_dir/app.json")" == True ]]; then
+            torch_packages+=(torchaudio==2.8.0)
+        fi
+        "$venv_python" -m pip install "${torch_packages[@]}" --index-url "${TORCH_INDEX_URL:-https://download.pytorch.org/whl/$torch_flavor}"
     fi
 fi
 "$venv_python" -m pip install -r "$script_dir/requirements-base.txt" -r "$app_dir/requirements.txt"

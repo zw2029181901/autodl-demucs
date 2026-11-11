@@ -15,6 +15,7 @@
 | BLIP | https://github.com/salesforce/BLIP | BSD-3-Clause |
 | Demucs | https://github.com/facebookresearch/demucs | MIT；使用固定官方htdemucs checkpoint |
 | E5 | https://github.com/microsoft/unilm/tree/master/e5 | MIT |
+| Depth Anything V2 Small | https://github.com/DepthAnything/Depth-Anything-V2 | Small为Apache-2.0；不替换为有非商业限制的Base/Large/Giant |
 
 Gradio、Diffusers、Transformers与Hugging Face Hub依赖保留其发行包内许可；本仓库未复制其库源码。模型下载保留仓库中的LICENSE/README等说明。不要把本项目LICENSE套用到第三方权重。
 

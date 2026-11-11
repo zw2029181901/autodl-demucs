@@ -24,6 +24,9 @@ def storage() -> Path:
     configured = os.environ.get("MODEL_ROOT")
     if configured:
         return Path(configured).expanduser().resolve()
+    bundled = root() / "models"
+    if bundled.is_dir():
+        return bundled
     disk = Path("/root/autodl-tmp")
     return (disk / "autodl-models") if disk.is_dir() else (root() / ".cache" / "models")
 
@@ -52,7 +55,8 @@ def model_path(name="main") -> str:
     if not override and saved_paths.exists():
         override = json.loads(saved_paths.read_text(encoding="utf-8")).get(name)
     if override:
-        path = Path(override).expanduser().resolve()
+        path = Path(override).expanduser()
+        path = (path if path.is_absolute() else root() / path).resolve()
         if not path.exists():
             raise FileNotFoundError(f"模型路径不存在：{path}")
         validate_model_directory(path, spec)
@@ -173,7 +177,7 @@ def seed_generator(seed):
 def page_header():
     import gradio as gr
     cfg = config()
-    gr.Markdown(f"# {cfg['name']}\n\n{cfg['description']}\n\n首次使用需要准备模型；之后会使用缓存。一次处理一个任务。")
+    gr.Markdown(f"# {cfg['name']}\n\n{cfg['description']}\n\n一次处理一个任务。")
 
 
 def guarded(function):
